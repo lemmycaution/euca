@@ -1,0 +1,19 @@
+all: |
+  IMAGE	qmi-b58041dd	Ubuntu Server 12.04.1	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-098feb2c	CentOS-5.8	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-05bee719	Ubuntu 12.04.1 Desktop	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-542v8843	Windows Server 2008 R2 Datacenter	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-fa4bdae0	Fedora 16 Server	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-4e5b842f	Ubuntu Server 10.04 (64-bit)	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-399db468	CentOS 6.5	53205cf4-3bd0-48df-b409-e00611aeb9d6	available	public		x86_64	machine			ebs
+  IMAGE	qmi-d7d77132	FreeBSD 10.0	e93a9745-b528-4fc1-a3f0-705395914ff0	available	public		x86_64	machine			ebs
+  IMAGE	qmi-9ac92558	Ubuntu Server 11.10 (64-bit)	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-96f82145	CentOS 6.0 (64-bit)	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-6ce3a4c7	Debian 7	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-42e877f6	CentOS 6.0 GUI (64-bit)	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-ca255b12	Minix 3.2.1	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-ce455aa2	FreeBSD 9.1	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-bd224a03	Ubuntu Server 12.10	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-1131f352	Windows Server 2012 Datacenter	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-65419ca1	CentOS 6.3 GUI	admin	available	public		x86_64	machine			ebs
+  IMAGE	qmi-b95145f0	CentOS 6.3	admin	available	public		x86_64	machine			ebs
