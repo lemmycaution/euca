@@ -15,7 +15,7 @@ module ::Kernel
     IO.popen(cmd) do |pipe|
       pipe.each do |line|
         output.puts line
-        Euca.logger.debug line
+        puts line
       end
     end
   
