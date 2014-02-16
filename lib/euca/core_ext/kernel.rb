@@ -10,7 +10,7 @@ module ::Kernel
   def sh cmd 
     output = StringIO.new
 
-    Euca.logger.debug "[sh] #{cmd}" 
+    puts "[sh] #{cmd}" 
 
     IO.popen(cmd) do |pipe|
       pipe.each do |line|
