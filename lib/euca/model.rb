@@ -6,6 +6,8 @@ module Euca
     
     module ClassMethods
       
+      @@wrapper = nil
+      
       def columns names = nil
         unless names.nil?
           @@columns = names
@@ -21,6 +23,10 @@ module Euca
         @@type_id = type_id
       end
       
+      def wrapper
+        @@wrapper || Wrapper.new(self.type_id, self.columns)
+      end
+      
     end
     
     def self.included(base)
@@ -34,7 +40,7 @@ module Euca
     private
     
     def wrapper
-      @wrapper ||= Wrapper.new self.class.type_id, self.class.columns
+      @wrapper ||= self.class.wrapper
     end
     
   end
