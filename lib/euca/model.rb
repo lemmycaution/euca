@@ -6,25 +6,31 @@ module Euca
     
     module ClassMethods
       
-      @@wrapper = nil
+      COLUMNS = "@@columns"
+      TYPE_ID = "@@type_id"
+      WRAPPER = "@@wrapper"
       
       def columns names = nil
         unless names.nil?
-          @@columns = names
+          class_variable_set(COLUMNS,names)
         end
-        @@columns
+        class_variable_get(COLUMNS)
       end
       
       def type_id
-        @@type_id ||= self.name
+        class_variable_get(TYPE_ID) || class_variable_set(TYPE_ID, self.name)
       end
       
       def type_id=type_id
-        @@type_id = type_id
+        class_variable_set(TYPE_ID,type_id)
       end
       
       def wrapper
-        @@wrapper || Wrapper.new(self.type_id, self.columns)
+        begin
+          class_variable_get(WRAPPER)
+        rescue NameError
+          Wrapper.new(self.type_id, self.columns)
+        end
       end
       
     end
