@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Euca::VERSION
   spec.authors       = ["Onur Uyar"]
   spec.email         = ["me@onuruyar.com"]
-  spec.summary       = %q{Ultra thin ruby wrapper for euca2ools command line tools}
+  spec.summary       = %q{Ultra thin Ruby wrapper for euca2ools command line tools}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
+  spec.add_dependency 'pult', '~> 0.0.4'
+  spec.add_dependency 'vhs', '~> 0.0.1'
+  spec.add_dependency 'activesupport', '~> 4.0.2'  
 end

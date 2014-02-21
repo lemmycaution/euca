@@ -1,42 +1,47 @@
 require 'euca'
 require 'euca/wrapper'
-
+require 'active_support/inflector'
 module Euca
   module Model
     
     module ClassMethods
       
-      COLUMNS = "@@columns"
-      TYPE_ID = "@@type_id"
-      WRAPPER = "@@wrapper"
-      
-      def columns names = nil
-        unless names.nil?
-          class_variable_set(COLUMNS,names)
-        end
-        class_variable_get(COLUMNS)
-      end
-      
-      def type_id
-        class_variable_get(TYPE_ID) || class_variable_set(TYPE_ID, self.name)
-      end
-      
-      def type_id=type_id
-        class_variable_set(TYPE_ID,type_id)
-      end
-      
       def wrapper
-        begin
-          class_variable_get(WRAPPER)
-        rescue NameError
-          Wrapper.new(self.type_id, self.columns)
-        end
+        @wrapper ||= Wrapper.new(self::TYPE_ID, self::TYPE_ATTRS)
+      end
+      
+      def all
+        describe
+      end
+      def where *args
+        describe "--filter", *args
+      end
+      def find_by *args
+        where(*args).first
+      end      
+      def find id
+        describe(id).first
+      end 
+      def describe *args
+        euca("describe-#{self.describer}",*args)
+      end                 
+      
+      def describer; @describer ||= self::TYPE_ID.tableize; end
+      def create; nil end
+      def destroy; nil end
+      
+      def euca api, *args
+        self.wrapper.run api, *args
       end
       
     end
     
     def self.included(base)
       base.extend ClassMethods
+    end
+    
+    def persisted?
+      self.class.find(self.id)
     end
     
     def euca api, *args

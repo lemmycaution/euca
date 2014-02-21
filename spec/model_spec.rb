@@ -2,11 +2,19 @@ require 'support/minitest_helper'
 require 'euca/model'
 
 describe Euca::Model do
+  
+  before do
+    
+    class Api
+      include Euca::Model
+      TYPE_ATTRS= %w(type id name)
+      TYPE_ID = "image"   
+    end
+
+  end
+  
   it "implements wrapper" do
-    Api = Class.new
-    Api.send :include, Euca::Model
-    Api.columns %w(type id name)
-    Api.type_id = "image"   
+    
     api = Api.new
     
     wrapper = MiniTest::Mock.new
