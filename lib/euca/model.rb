@@ -27,8 +27,6 @@ module Euca
       end                 
       
       def describer; @describer ||= self::TYPE_ID.tableize; end
-      def create; nil end
-      def destroy; nil end
       
       def euca api, *args
         self.wrapper.run api, *args
