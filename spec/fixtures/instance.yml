@@ -1,0 +1,19 @@
+registry: | 
+  RESERVATION	r-c5627bef	7e36d16f-19c1-404a-babb-36c8e3c6ddd9	default
+  INSTANCE	i-c3d0e9df	qmi-b58041dd	i-46-149-29-23.compute.is-1.greenqloud.com		running	default	0		t1.nano	2014-02-17T01:19:04.000+00:00	is-1a					10.0.0.1	10.0.0.1
+
+host: | 
+  RESERVATION	r-230d75e3	7e36d16f-19c1-404a-babb-36c8e3c6ddd9	default
+  INSTANCE	i-6e13180f	qmi-b58041dd	i-46-149-29-252.compute.is-1.greenqloud.com		running	default	0		t1.nano	2014-02-16T16:56:07.000+00:00	is-1a					0.0.0.0	0.0.0.0
+
+valid: | 
+  RESERVATION	r-230d75e3	7e36d16f-19c1-404a-babb-36c8e3c6ddd9	default
+  INSTANCE	i-6e13180f	qmi-b58041dd	i-46-149-29-252.compute.is-1.greenqloud.com		running	default	0		t1.nano	2014-02-16T16:56:07.000+00:00	is-1a		
+
+invalid: | 
+  RESERVATION	r-230d75e3	7e36d16f-19c1-404a-babb-36c8e3c6ddd9	default
+  INSTANCE
+
+dokku: | 
+  RESERVATION	r-230d75e3	7e36d16f-19c1-404a-babb-36c8e3c6ddd9	default
+  INSTANCE	i-29940840	qmi-b58041dd	i-46-149-29-252.compute.is-1.greenqloud.com		running	default	0		t1.nano	2014-02-16T16:56:07.000+00:00	is-1a					0.0.0.0	0.0.0.0	

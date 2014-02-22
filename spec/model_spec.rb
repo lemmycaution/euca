@@ -20,7 +20,7 @@ describe Euca::Model do
     wrapper = MiniTest::Mock.new
     wrapper.expect :run, api.send(:wrapper).parse(fixture(:images)["all"]), [ "describe-images" ]
     
-    api.instance_variable_set "@wrapper", wrapper
+    Api.instance_variable_set "@wrapper", wrapper
         
     images = api.euca("describe-images")
     images.first["name"].must_equal "Ubuntu Server 12.04.1"

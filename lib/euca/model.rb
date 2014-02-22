@@ -1,4 +1,3 @@
-require 'euca'
 require 'euca/wrapper'
 require 'active_support/inflector'
 module Euca
@@ -13,12 +12,16 @@ module Euca
       def all
         describe
       end
-      def where *args
-        describe "--filter", *args
+
+      def where query = {}
+        all.select{ |m| 
+          s = m.select{ |k,v| query.keys.include?(k.to_sym) }
+          s.values.sort == query.values.sort 
+        }
       end
-      def find_by *args
-        where(*args).first
-      end      
+      def find_by query = {}
+        where(query).first
+      end
       def find id
         describe(id).first
       end 
