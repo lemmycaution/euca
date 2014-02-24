@@ -6,9 +6,7 @@ module Euca
     TYPE_ID = "keypair"
     TYPE_ATTRS = %w(type id fingerprint)
       
-    def self.create email, path = "~/.ssh"
-      put :debug, email, path
-      
+    def self.create email, path = "~/.ssh"      
       keyfile = "#{path}/#{email}.id"
       keypairs = euca("create-keypair", email, ">", keyfile)
       sh("chmod 600 #{keyfile}")

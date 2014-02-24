@@ -1,4 +1,4 @@
-require 'pult'
+require 'logger'
 require 'vhs'
 require "euca/version"
 require "euca/api"
@@ -9,6 +9,10 @@ module Euca
   UBUNTU_13_10="qmi-c4c45230"
   UBUNTU_12_04="qmi-b58041dd"
   T1_NANO="t1.nano"
+  
+  def self.logger
+    @@logger ||= Logger.new(STDOUT)
+  end
   
   def self.has_cli?
     !(self.version =~ /\d+\.\d+\.\d+/).nil?
