@@ -2,6 +2,7 @@ module Euca
   class Instance
       
     include Euca::Model
+    include Euca::Filterable
       
     TYPE_ID = "instance"
     TYPE_ATTRS = %w(type_id id image public_dns_name private_dns_name status group 
@@ -18,14 +19,6 @@ module Euca
       euca("terminate-instances",id).first
     end
 
-    def self.where *args
-      describe "--filter", *args
-    end
-      
-    def self.find_by *args
-      where(*args).first
-    end      
-      
   end
 end
     

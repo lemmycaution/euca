@@ -19,12 +19,15 @@ module Euca
           s.values.sort == query.values.sort 
         }
       end
+      
       def find_by query = {}
         where(query).first
       end
+      
       def find id
         describe(id).first
       end 
+      
       def describe *args
         euca("describe-#{self.describer}",*args)
       end                 

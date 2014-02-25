@@ -16,6 +16,10 @@ module Euca
       instance = Instance.create "-t", Euca::T1_NANO, Euca::UBUNTU_13_10
       
       instance["public_dns_name"].must_equal "i-46-149-29-252.compute.is-1.greenqloud.com"
+
+      mock.expect :run, fixture, [ "describe-instances", "--filter instance-id=i-6e13180f" ]      
+      finded = Instance.find_by({"instance-id" => instance["id"]})
+      finded["public_dns_name"].must_equal instance["public_dns_name"]
     end
   end
 end
