@@ -5,7 +5,7 @@ module Euca
     include Euca::Filterable
           
     TYPE_ID = "tag"
-    TYPE_ATTRS = %w(type owner_id owner_type key value)
+    TYPE_ATTRS = %w(type instance_id key value)
       
     def self.create key, value, instance_id = nil
       if key.is_a? Hash
