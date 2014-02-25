@@ -1,7 +1,10 @@
 require 'euca/wrapper'
 require 'active_support/inflector'
+require 'active_support/concern'
 module Euca
   module Model
+    
+    extend ActiveSupport::Concern
     
     module ClassMethods
       
@@ -40,22 +43,22 @@ module Euca
       
     end
     
-    def self.included(base)
-      base.extend ClassMethods
-    end
+    included do
     
-    def persisted?
-      self.class.find(self.id)
-    end
+      def persisted?
+        self.class.find(self.id)
+      end
     
-    def euca api, *args
-      wrapper.run api, *args
-    end
+      def euca api, *args
+        wrapper.run api, *args
+      end
     
-    private
+      private
     
-    def wrapper
-      @wrapper ||= self.class.wrapper
+      def wrapper
+        @wrapper ||= self.class.wrapper
+      end
+      
     end
     
   end
