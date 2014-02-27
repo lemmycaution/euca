@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Onur Uyar"]
   spec.email         = ["me@onuruyar.com"]
   spec.summary       = %q{Ultra thin Ruby wrapper for euca2ools command line tools}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = "https://github.com/lemmycaution/euca"
+  spec.license       = "Unlicense"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
