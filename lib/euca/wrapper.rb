@@ -7,7 +7,8 @@ module Euca
     end
     
     def run api, *args
-      parse(sh("euca-#{api} #{args.join(" ")}"))
+      raise NoMethodError.new("Euca#run: #{api} not found") and return false unless Euca.api_methods.include?(api)
+      parse Euca.sh(:"euca-#{api}", *args).to_s
     end
     
     def parse response

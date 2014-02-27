@@ -9,7 +9,7 @@ module Euca
     def self.create email, path = "~/.ssh"      
       keyfile = "#{path}/#{email}.id"
       keypairs = euca("create-keypair", email, ">", keyfile)
-      sh("chmod 600 #{keyfile}")
+      Euca.sh :chmod, 600, keyfile
       {"id" => email}
     end
       

@@ -20,6 +20,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest"
-  spec.add_dependency 'vhs', '~> 0.0.4'
   spec.add_dependency 'activesupport', '~> 4.0.2'  
+  spec.add_dependency 'rye', '0.9.12'  
 end
